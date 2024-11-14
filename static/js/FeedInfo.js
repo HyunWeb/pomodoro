@@ -13,7 +13,7 @@ window.onload = function () {
 
       const feedContainer = document.querySelector('.feed-container');
 
-      if (data && data.feeds.length > 0) {
+      if (data && data.feeds.length > 0) {        
         const sessionNickname = data.feedNickname;
 
         data.feeds.forEach(feed => {
@@ -32,7 +32,7 @@ window.onload = function () {
                 <div class="user-info">
               <div class="profile-img">
                 <img
-                  src="/static/img/profile.png"
+                  src="${feed.user.profile_image}"
                   alt="프로필 이미지"
                   width="30px"
                 />
