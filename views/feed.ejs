@@ -20,7 +20,6 @@
     />
   </head>
   <body>
-    <header>
     <!-- 피드 올리는 아이콘 -->
     <div class="plus-icon">
       <img
@@ -39,7 +38,7 @@
           class="close"
           onclick="closeModal()"
         />
-        
+
         <div
           class="upload-container"
           id="uploadContainer"
@@ -89,10 +88,10 @@
       const imageupload = document.querySelector("#imageUpload");
 
       imageupload.addEventListener("change", (event) => {
-        if(imageupload.files.length > 0){
+        if (imageupload.files.length > 0) {
           uploadlabel.textContent = imageupload.files[0].name;
           uploadlabel.style.color = "#121212";
-        }else {
+        } else {
           uploadlabel.innerHTML = `파일을 선택하거나 여기로 끌어다 놓으세요<br /><br />
             업로드 가능한 확장자<br />
             .png / .jpg / .jpeg / .bmp /`;
@@ -117,27 +116,28 @@
           fetch("/feed/comment", {
             method: "POST",
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
               user_id: userId,
               feed_id: feedId,
               comment: commentText,
-            })
-          }).then(response => response.json())
-          .then(data => {
-            if(data.message) {
-              commentInput.value = ""; // 댓글 입력 란 비우기
-              toggleCommentBox(); // 댓글 입력창 숨기기
-            } else {
-              console.error("댓글 등록 실패");
-            }
+            }),
           })
-          .catch(error => {
-            console.log("서버 요청 실패:", error);
-          });
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.message) {
+                commentInput.value = ""; // 댓글 입력 란 비우기
+                toggleCommentBox(); // 댓글 입력창 숨기기
+              } else {
+                console.error("댓글 등록 실패");
+              }
+            })
+            .catch((error) => {
+              console.log("서버 요청 실패:", error);
+            });
         } else {
-          alert("댓글을 입력해 주세요!")
+          alert("댓글을 입력해 주세요!");
         }
       }
 
@@ -168,8 +168,8 @@
             title: "입력 필수 항목을 확인하세요",
             text: "이미지 또는 게시글 값을 입력해주세요!",
             customClass: {
-              popup: 'custom-popup' 
-            }
+              popup: "custom-popup",
+            },
           });
           return;
         }
@@ -180,45 +180,47 @@
 
         // 서버로 FormData 전송
 
-        fetch('/feed/upload', {
-          method: 'POST',
-          body: formData
-      })
-      .then(response => {
-          if (response.ok) {
+        fetch("/feed/upload", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (response.ok) {
               Swal.fire({
-                  icon: 'success',
-                  text: '업로드가 성공적으로 완료되었습니다.',
-                  confirmButtonText: '확인'
-              }).then ((result) => {
+                icon: "success",
+                text: "업로드가 성공적으로 완료되었습니다.",
+                confirmButtonText: "확인",
+              }).then((result) => {
                 // 사용자가 확인 버튼 클릭하면 페이지 리다이렉트
-                if(result.isConfirmed) {
-                // 모달창 닫기 및 
+                if (result.isConfirmed) {
+                  // 모달창 닫기 및
                   document.getElementById("modal").style.display = "none";
-                // 페이지 리다이렉트
+                  // 페이지 리다이렉트
                   window.location.href = "/";
                 }
               });
-          } else {
+            } else {
               // 400 에러 확장자 처리
               if (response.status === 400) {
-                  return response.json().then(data => {
-                      throw new Error(data.message || '허용되지 않는 확장자입니다.');
-                  });
+                return response.json().then((data) => {
+                  throw new Error(
+                    data.message || "허용되지 않는 확장자입니다."
+                  );
+                });
               } else {
-                  // 기타 에러
-                  throw new Error('업로드 실패!');
+                // 기타 에러
+                throw new Error("업로드 실패!");
               }
-          }
-      })
-      .catch((error) => {
-          // 모든 에러 상황을 여기서 처리
-          Swal.fire({
-              icon: 'error',
-              text: error.message // 기타 에러 메시지 표시
+            }
+          })
+          .catch((error) => {
+            // 모든 에러 상황을 여기서 처리
+            Swal.fire({
+              icon: "error",
+              text: error.message, // 기타 에러 메시지 표시
+            });
           });
-      });
-    }
+      }
     </script>
   </body>
 </html>

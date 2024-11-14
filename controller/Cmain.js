@@ -1038,6 +1038,7 @@ exports.get_MyPage = async (req, res) => {
 
   // 업무 성공률
   let successPercentage = Math.round((done_titles.length / allListNum) * 100);
+
   if (isNaN(successPercentage)) {
     successPercentage = 0;
   }
@@ -1071,10 +1072,11 @@ exports.get_MyPage = async (req, res) => {
   const limit = 3; // 한페이지에 보여줄 피드 개수
   let offset = (page - 1) * limit;
   offset = isNaN(offset) ? 0 : offset;
+
   const like_feed = await Feed.findAll({
     where: {
       id: {
-        [Op.in]: like_feedId_arr,
+        [Op.in]: like_feedId_arr, //[1, 2, 3, 4]
       },
     },
     include: [
