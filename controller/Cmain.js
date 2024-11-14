@@ -521,7 +521,7 @@ exports.get_Feeds = async (req, res) => {
       include: [
         {
           model: require("../models/index").User,
-          attributes: ["nickname"], // 유저 닉네임
+          attributes: ["nickname", "profile_image"], // 유저 닉네임
         },
       ],
       order: [["created_at", "DESC"]], // 최신 피드 순으로 정렬
