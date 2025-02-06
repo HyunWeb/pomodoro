@@ -1,6 +1,19 @@
 # 뽀모타임(Pomotime)
 **뽀모타임(Pomotime)** 은 뽀모도로 공부법을 기반으로 한 타이머와 일정 관리 기능을 제공하여 사용자가 효율적으로 공부 시간을 관리할 수 있도록 돕는 웹 애플리케이션입니다.
 
+## 🛠️ 사용한 기술 스택
+### 디자인
+<img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+
+### 프론트엔드
+<img src="https://img.shields.io/badge/ejs-B4CA65?style=for-the-badge&logo=ejs&logoColor=black"><img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=black"><img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=black"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+### 백엔드
+<img src="https://img.shields.io/badge/nodedotjs-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=black"><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=black"><img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazons3&logoColor=black">
+### 배포
+<img src="https://img.shields.io/badge/filezilla-BF0000?style=for-the-badge&logo=filezilla&logoColor=black">
+
+---
+
 ## 📅 프로젝트 개요
 - 기간: 2024년 10월 30일 ~ 11월 14일 (2주)
 - 팀 프로젝트
@@ -35,23 +48,6 @@
 ### 기대효과
 - 설치가 필요 없는 웹 기반 앱으로 사용자 경험 향상
 - 꾸준한 학습 관리로 집중력 및 학습 효율 증가
-
----
-
-## 🛠️ 사용한 기술 스택
-### 1. 디자인
-- **Figma**: 전체 UI 설계
-- **Illustrator**: 로고 및 일러스트 제작
-### 2. 프론트엔드
-- **HTML** (EJS 템플릿)
-- **CSS**
-- **JavaScript**
-### 3. 백엔드
-- **Node.js**: 라우터 및 컨트롤러 구현
-- **MySQL (Sequelize)**: 데이터베이스 관리
-- **Amazon S3**: 이미지 등 미디어 파일 관리
-### 4. 배포 및 기타
-- **FileZilla**: 서버 배포 및 관리
 
 ---
 
