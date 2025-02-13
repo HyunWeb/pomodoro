@@ -1,7 +1,8 @@
 # 뽀모타임(Pomotime)
 **뽀모타임(Pomotime)** 은 뽀모도로 공부법을 기반으로 한 타이머와 일정 관리 기능을 제공하여 사용자가 효율적으로 공부 시간을 관리할 수 있도록 돕는 웹 애플리케이션입니다.
 
-<img width="1919" alt="스크린샷 2025-02-11 오후 7 15 28" src="https://github.com/user-attachments/assets/15f5a463-fe84-4a14-a074-6efb6c66f68b" />
+<img width="1307" alt="스크린샷 2025-02-13 오후 6 11 58" src="https://github.com/user-attachments/assets/6ffbfff6-bf99-481c-b18d-1cd2f501941e" />
+
 
 
 ## 🛠️ 사용한 기술 스택
